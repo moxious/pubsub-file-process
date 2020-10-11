@@ -22,14 +22,8 @@ const annotateImageToPubsubTopic = async (file, context) => {
         label.uri = uri;
     });
 
-    // Construct a message to send via Pubsub
-    const messageObject = {
-        data: {
-            message: labels,
-        },
-    };
-
-    const messageBuffer = Buffer.from(JSON.stringify(messageObject), 'utf8');
+    // Construct a message to send via Pubsub; an array of labels objects.
+    const messageBuffer = Buffer.from(JSON.stringify(labels), 'utf8');
     // console.log(`Labels for ${uri}: `, JSON.stringify(messageObject, null, 2));
 
     // Publishes a message

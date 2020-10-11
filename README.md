@@ -11,3 +11,12 @@ that processing on to Pubsub
 
 The key parameters are the bucket you want to watch, and the topic to publish to.
 
+## Sample set
+
+I use the base APCM animal image set as a test resource.   For a demo, I might copy up a selection of the
+files like this:
+
+```
+cd base_apcm_animals
+gsutil cp *20.jpg gs://graph-image-classification/
+```
